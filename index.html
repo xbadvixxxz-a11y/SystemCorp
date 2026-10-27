@@ -100,33 +100,13 @@ footer img{height:40px;display:block}
 .assure b{display:block}
 .assure span{color:var(--mut);font-size:.9rem}
 
-/* ===== Orçamento ===== */
-.quote{display:grid;gap:40px;margin-top:40px}
-@media(min-width:900px){.quote{grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}}
-.quote .side p{color:var(--mut);margin:0 0 24px}
-.direct{display:grid;gap:12px}
-.direct a{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:16px;color:var(--fg);text-decoration:none;overflow-wrap:anywhere;transition:border-color .2s}
+/* ===== Contato ===== */
+.direct{display:grid;gap:12px;margin-top:40px}
+@media(min-width:760px){.direct{grid-template-columns:repeat(3,1fr)}}
+.direct a{display:flex;align-items:center;gap:14px;padding:20px;border:1px solid var(--line);border-radius:16px;color:var(--fg);text-decoration:none;overflow-wrap:anywhere;transition:border-color .2s}
 .direct a:hover{border-color:var(--fg)}
 .direct svg{flex:none;width:22px;height:22px}
 .direct small{display:block;color:var(--mut);font-size:.78rem}
-form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;background:var(--panel);display:grid;gap:18px}
-.qf .two{display:grid;gap:18px}
-@media(min-width:620px){.qf .two{grid-template-columns:1fr 1fr}}
-.qf label{display:grid;gap:8px;font-size:.85rem;font-weight:500;color:#d4d4d4}
-.qf input,.qf select,.qf textarea{width:100%;font:inherit;font-size:1rem;color:var(--fg);background:#000;border:1px solid #333;border-radius:12px;padding:14px 16px;transition:border-color .2s}
-.qf textarea{min-height:120px;resize:vertical}
-.qf input:focus,.qf select:focus,.qf textarea:focus{outline:none;border-color:var(--fg)}
-.qf .chips{display:flex;flex-wrap:wrap;gap:8px}
-.qf .chips label{display:block;cursor:pointer}
-.qf .chips input{position:absolute;opacity:0;width:1px;height:1px}
-.qf .chips span{display:inline-block;padding:10px 16px;border:1px solid #333;border-radius:999px;color:var(--mut);font-size:.9rem;transition:all .2s}
-.qf .chips input:checked+span{background:var(--fg);color:#000;border-color:var(--fg);font-weight:800}
-.qf .chips input:focus-visible+span{outline:3px solid var(--fg);outline-offset:2px}
-.qf fieldset{border:0;padding:0;margin:0;display:grid;gap:10px}
-.qf legend{font-size:.85rem;font-weight:500;color:#d4d4d4;padding:0;margin-bottom:10px}
-.qf .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.qf .note{color:var(--mut);font-size:.8rem;margin:0}
-.qf .err{color:#ff8a8a;font-size:.85rem;margin:0;min-height:1.2em}
 .swipe{display:none}
 /* ===== Celular: planos lado a lado, deslizando para o lado ===== */
 @media(max-width:759px){
@@ -180,9 +160,9 @@ form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;backgr
       </article>
       <article>
         <span class="news-tag">Atendimento</span>
-        <h3>Orçamento pelo WhatsApp</h3>
-        <p>Preencha o formulário e envie seu pedido direto pelo WhatsApp ou por e-mail.</p>
-        <a href="#orcamento">Pedir orçamento →</a>
+        <h3>Atendimento pelo WhatsApp</h3>
+        <p>Toque em um plano e fale com a gente na hora, direto pelo WhatsApp.</p>
+        <a href="#orcamento">Fale com a gente →</a>
       </article>
     </div>
   </div>
@@ -215,7 +195,7 @@ form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;backgr
 <section id="planos">
   <span class="month">Planos mensais</span>
   <h2>Escolha o plano <b>ideal</b> para o seu momento</h2>
-  <p class="lead">Todos os planos incluem acompanhamento da nossa equipe. Selecione um plano para pedir seu orçamento.</p>
+  <p class="lead">Todos os planos incluem acompanhamento da nossa equipe. Toque em um plano e fale com a gente direto pelo WhatsApp.</p>
 
   <div class="plans">
     <article class="plan">
@@ -227,7 +207,7 @@ form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;backgr
         <li>Mostruário</li>
         <li>Site com manutenção e atualizações mensais</li>
       </ul>
-      <a class="btn" href="#orcamento" data-plan="Básico">Começar agora →</a>
+      <a class="btn" href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20tenho%20interesse%20no%20plano%20B%C3%A1sico.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Começar agora →</a>
     </article>
 
     <article class="plan pro">
@@ -241,7 +221,7 @@ form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;backgr
         <li>Desenvolvimento de estratégias para seu produto</li>
         <li>Uso de links (emissão de pedidos, acesso a outras abas etc.)</li>
       </ul>
-      <a class="btn" href="#orcamento" data-plan="Pro">Escolher o Pro →</a>
+      <a class="btn" href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20tenho%20interesse%20no%20plano%20Pro.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Escolher o Pro →</a>
     </article>
 
     <article class="plan adv">
@@ -258,7 +238,7 @@ form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;backgr
         <li>IA assistente feita do zero, própria para o seu negócio (exclusiva para clientes)</li>
         <li>Acompanhamento digital da nossa empresa</li>
       </ul>
-      <a class="btn" href="#orcamento" data-plan="Advanced">Ir mais longe →</a>
+      <a class="btn" href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20tenho%20interesse%20no%20plano%20Advanced.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Ir mais longe →</a>
     </article>
   </div>
   <span class="swipe" aria-hidden="true">Deslize para ver mais →</span>
@@ -271,44 +251,12 @@ form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;backgr
 </section>
 
 <section id="orcamento">
-  <h2>Peça seu <b>orçamento</b></h2>
-  <p class="lead">Conte um pouco sobre o seu negócio e a SystemCorp entra em contato com a melhor proposta para você.</p>
-  <div class="quote">
-    <div class="side">
-      <p>Preencha o formulário e envie direto pelo WhatsApp ou por e-mail. Se preferir, fale com a gente pelos canais abaixo.</p>
-      <div class="direct">
-        <a href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1112 20a8 8 0 01-3.9-1L4 20z"/></svg><span><small>WhatsApp</small>(35) 99218-5770</span></a>
-        <a href="tel:+5535992185770"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><span><small>Telefone</small>(35) 99218-5770</span></a>
-        <a href="mailto:acessoriasystemcorp@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span><small>E-mail</small>acessoriasystemcorp@gmail.com</span></a>
-      </div>
-    </div>
-
-    <form class="qf" id="qf" novalidate>
-      <div class="two">
-        <label>Seu nome *<input name="nome" autocomplete="name" required></label>
-        <label>Empresa<input name="empresa" autocomplete="organization"></label>
-      </div>
-      <div class="two">
-        <label>WhatsApp *<input name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" required></label>
-        <label>E-mail<input name="email" type="email" autocomplete="email"></label>
-      </div>
-      <fieldset>
-        <legend>Plano de interesse</legend>
-        <div class="chips">
-          <label><input type="radio" name="plano" value="Básico"><span>Básico</span></label>
-          <label><input type="radio" name="plano" value="Pro"><span>Pro</span></label>
-          <label><input type="radio" name="plano" value="Advanced"><span>Advanced</span></label>
-          <label><input type="radio" name="plano" value="Ainda não sei" checked><span>Ainda não sei</span></label>
-        </div>
-      </fieldset>
-      <label>Conte sobre o seu projeto<textarea name="msg" placeholder="Ex.: tenho uma loja e quero um site com catálogo e pedidos pelo WhatsApp."></textarea></label>
-      <p class="err" id="qf-err" role="alert"></p>
-      <div class="actions">
-        <button class="btn" type="submit">Enviar pelo WhatsApp →</button>
-        <button class="btn ghost" type="button" id="qf-mail">Enviar por e-mail</button>
-      </div>
-      <p class="note">Seus dados são usados apenas para responder ao seu pedido.</p>
-    </form>
+  <h2>Fale com a <b>SystemCorp</b></h2>
+  <p class="lead">Escolha o canal que preferir e a SystemCorp responde com a melhor proposta para o seu negócio.</p>
+  <div class="direct">
+    <a href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1112 20a8 8 0 01-3.9-1L4 20z"/></svg><span><small>WhatsApp</small>(35) 99218-5770</span></a>
+    <a href="tel:+5535992185770"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><span><small>Telefone</small>(35) 99218-5770</span></a>
+    <a href="mailto:acessoriasystemcorp@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span><small>E-mail</small>acessoriasystemcorp@gmail.com</span></a>
   </div>
 </section>
 </main>
@@ -322,37 +270,5 @@ form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;backgr
   </div>
 </footer>
 
-<script>
-(function(){
-  var form=document.getElementById('qf');
-  document.querySelectorAll('[data-plan]').forEach(function(a){
-    a.addEventListener('click',function(){
-      var r=form.querySelector('input[name="plano"][value="'+a.dataset.plan+'"]');if(r)r.checked=true;
-      setTimeout(function(){form.querySelector('input[name="nome"]').focus({preventScroll:true});},500);
-    });
-  });
-  function build(){
-    var f=new FormData(form),err=document.getElementById('qf-err');
-    var nome=(f.get('nome')||'').trim(),tel=(f.get('tel')||'').trim();
-    if(!nome||!tel){err.textContent='Preencha seu nome e WhatsApp para enviarmos o orçamento.';(nome?form.tel:form.nome).focus();return null;}
-    err.textContent='';
-    var l=['Olá, vim pelo site da SystemCorp e gostaria de solicitar um orçamento.','','Nome: '+nome];
-    if((f.get('empresa')||'').trim())l.push('Empresa: '+f.get('empresa').trim());
-    l.push('WhatsApp: '+tel);
-    if((f.get('email')||'').trim())l.push('E-mail: '+f.get('email').trim());
-    l.push('Plano de interesse: '+(f.get('plano')||'Ainda não sei'));
-    if((f.get('msg')||'').trim())l.push('','Projeto: '+f.get('msg').trim());
-    return l.join('\n');
-  }
-  form.addEventListener('submit',function(e){
-    e.preventDefault();var t=build();if(!t)return;
-    window.open('https://wa.me/5535992185770?text='+encodeURIComponent(t),'_blank','noopener');
-  });
-  document.getElementById('qf-mail').addEventListener('click',function(){
-    var t=build();if(!t)return;
-    location.href='mailto:acessoriasystemcorp@gmail.com?subject='+encodeURIComponent('Pedido de orçamento — site SystemCorp')+'&body='+encodeURIComponent(t);
-  });
-})();
-</script>
 </body>
 </html>
