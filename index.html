@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SystemCorp — Tecnologia e soluções digitais para empresas</title>
+<title>SystemCorp — Tecnologia, estratégia e soluções digitais</title>
 <meta name="description" content="A SystemCorp cria sites profissionais e desenvolve sistemas e estratégias digitais para atrair mais clientes para o seu negócio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,12 +22,23 @@ header img{height:56px;width:auto;display:block}
 .btn:focus-visible,a:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
 .btn.sm{padding:11px 20px;font-size:.85rem}
 .hero{position:relative;padding:72px 0 96px;overflow:hidden}
-.hero h1{font-size:clamp(2.6rem,8vw,5.6rem);line-height:1.02;letter-spacing:-.03em;font-weight:300;margin:0 0 28px;max-width:12ch}
+.hero h1{font-size:clamp(3.2rem,11vw,7rem);line-height:1;letter-spacing:-.04em;font-weight:300;margin:0 0 16px}
 .hero h1 b{font-weight:800}
 .hero p{font-size:1.15rem;color:var(--mut);max-width:46ch;margin:0 0 36px}
 .eyebrow{display:block;font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mut);margin-bottom:20px}
 .row{display:flex;flex-wrap:wrap;gap:12px}
-.slash{position:absolute;right:-8%;top:18%;width:46%;max-width:520px;pointer-events:none}
+.hero .sub{font-size:clamp(1.25rem,2.6vw,1.6rem);color:var(--fg);font-weight:500;line-height:1.3;max-width:30ch;margin:0 0 18px}
+.news{position:relative;z-index:1;margin-top:72px}
+.news-title{font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mut);font-weight:500;margin:0 0 16px;max-width:none}
+.news-list{display:grid;gap:16px}
+@media(min-width:760px){.news-list{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}}
+.news article{display:flex;flex-direction:column;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--panel)}
+.news-tag{align-self:flex-start;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--fg);color:#000;padding:5px 10px;border-radius:999px;margin-bottom:16px}
+.news h3{margin:0 0 8px;font-size:1.15rem;font-weight:800;letter-spacing:-.01em}
+.news p{margin:0 0 16px;color:var(--mut);font-size:.95rem;flex:1}
+.news a{color:var(--fg);font-weight:800;font-size:.9rem;text-decoration:none}
+.news a:hover{text-decoration:underline}
+.slash{position:absolute;right:-8%;top:16%;width:34%;max-width:420px;pointer-events:none}
 .slash i{display:block;height:34px;background:var(--fg);transform:skewX(-38deg);margin-bottom:16px;border-radius:0 18px 18px 0}
 .slash i:nth-child(1){width:100%}.slash i:nth-child(2){width:72%;margin-left:14%;opacity:.5}.slash i:nth-child(3){width:48%;margin-left:30%;opacity:.2}
 .hero .in{position:relative;z-index:1}
@@ -56,7 +67,7 @@ footer img{height:40px;display:block}
 .contatos{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:center;margin-top:28px}
 .contatos a{color:var(--fg);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line);padding-bottom:2px;overflow-wrap:anywhere}
 .contatos a:hover{border-color:var(--fg)}
-@media(max-width:620px){.slash{opacity:.35;top:20%;width:70%}.hero{padding-top:40px}}
+@media(max-width:620px){.slash{display:none}.hero{padding-top:40px}}
 
 .btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--fg)}
 .btn.ghost:hover{background:var(--fg);color:#000}
@@ -140,12 +151,39 @@ form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;backgr
 <div class="hero">
   <div class="slash" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="in">
-    <span class="eyebrow">SystemCorp · Soluções digitais</span>
-    <h1>Tecnologia que faz sua empresa <b>crescer.</b></h1>
-    <p>A SystemCorp desenvolve sites, sistemas e estratégias digitais para empresas que querem se destacar, conquistar clientes e vender mais.</p>
+    <span class="eyebrow">Bem-vindo à</span>
+    <h1><b>SystemCorp</b></h1>
+    <p class="sub">Tecnologia, estratégia e soluções digitais para empresas.</p>
+    <p>Somos uma empresa de tecnologia que cria sites profissionais, sistemas e estratégias digitais para ajudar o seu negócio a se destacar, conquistar clientes e vender mais.</p>
     <div class="row">
-      <a class="btn" href="#orcamento">Solicite seu orçamento</a>
+      <a class="btn" href="#orcamento">Fale com a SystemCorp</a>
       <a class="btn ghost" href="#planos">Conheça os planos</a>
+    </div>
+  </div>
+
+  <!-- ===== Novidades =====
+       Para adicionar uma novidade, copie um bloco <article> abaixo e troque os textos. -->
+  <div class="news" aria-labelledby="novidades-titulo">
+    <h2 class="news-title" id="novidades-titulo">Novidades</h2>
+    <div class="news-list">
+      <article>
+        <span class="news-tag">Novo</span>
+        <h3>Planos mensais</h3>
+        <p>Básico, Pro e Advanced: escolha o plano ideal para o momento do seu negócio.</p>
+        <a href="#planos">Ver planos →</a>
+      </article>
+      <article>
+        <span class="news-tag">Advanced</span>
+        <h3>IA assistente própria</h3>
+        <p>Uma inteligência artificial feita do zero para a sua empresa, exclusiva para clientes.</p>
+        <a href="#planos">Saiba mais →</a>
+      </article>
+      <article>
+        <span class="news-tag">Atendimento</span>
+        <h3>Orçamento pelo WhatsApp</h3>
+        <p>Preencha o formulário e envie seu pedido direto pelo WhatsApp ou por e-mail.</p>
+        <a href="#orcamento">Pedir orçamento →</a>
+      </article>
     </div>
   </div>
 </div>
