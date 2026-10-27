@@ -99,7 +99,7 @@ footer img{height:40px;display:block}
 .plan small{color:var(--mut);font-size:.95rem}
 .plan h3{margin:2px 0 10px;font-size:2.1rem;font-weight:800;letter-spacing:-.02em;line-height:1}
 .plan .tag{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin:0 0 22px;line-height:1.6;min-height:3.2em}
-.plan ul{list-style:none;padding:22px 0 0;margin:0 0 28px;border-top:1px solid var(--line);display:grid;gap:12px;flex:1}
+.plan ul{list-style:none;padding:22px 0 0;margin:0 0 28px;border-top:1px solid var(--line);display:grid;gap:12px;flex:1;align-content:start}
 .plan li{position:relative;padding-left:24px;font-size:.95rem;color:#e5e5e5}
 .plan li::before{content:"✓";position:absolute;left:0;top:0;font-weight:800;color:var(--fg)}
 .plan li strong{color:var(--fg)}
@@ -141,6 +141,16 @@ form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;backgr
 .qf .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .qf .note{color:var(--mut);font-size:.8rem;margin:0}
 .qf .err{color:#ff8a8a;font-size:.85rem;margin:0;min-height:1.2em}
+.swipe{display:none}
+/* ===== Celular: anúncios e planos lado a lado, deslizando para o lado ===== */
+@media(max-width:759px){
+.ads,.plans{display:grid;grid-auto-flow:column;grid-auto-columns:86%;grid-template-columns:none;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-24px;padding:16px 24px 12px;scroll-padding-inline:24px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.ads::-webkit-scrollbar,.plans::-webkit-scrollbar{display:none}
+.ads>*,.plans>*{scroll-snap-align:start}
+.plan:hover{transform:none}
+.swipe{display:block;color:var(--mut);font-size:.8rem;letter-spacing:.08em;margin-top:8px}
+}
+@media(min-width:760px) and (max-width:899px){.plans{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.plan,.adframe img{transition:none;animation:none}}
 </style>
 </head>
@@ -233,6 +243,7 @@ form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;backgr
   </article>
   <!-- Novo anúncio: copie um <article class="ad"> acima e cole aqui -->
   </div>
+  <span class="swipe" aria-hidden="true">Deslize para ver mais →</span>
 </section>
 
 <section id="planos">
@@ -284,6 +295,7 @@ form.qf{padding:32px 28px;border:1px solid var(--line);border-radius:24px;backgr
       <a class="btn" href="#orcamento" data-plan="Advanced">Ir mais longe →</a>
     </article>
   </div>
+  <span class="swipe" aria-hidden="true">Deslize para ver mais →</span>
 
   <div class="assure">
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><p style="margin:0"><b>Segurança e estabilidade</b><span>Seus dados sempre protegidos.</span></p></div>
