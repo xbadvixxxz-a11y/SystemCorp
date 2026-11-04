@@ -46,11 +46,6 @@ section{padding:80px 0;border-top:1px solid var(--line)}
 h2{font-size:clamp(1.8rem,4.5vw,3rem);letter-spacing:-.02em;font-weight:300;line-height:1.1;margin:0 0 20px;max-width:18ch}
 h2 b{font-weight:800}
 .lead{color:var(--mut);font-size:1.1rem;max-width:58ch;margin:0 0 12px}
-.benef{display:grid;gap:0;margin-top:48px}
-.benef article{display:grid;grid-template-columns:1fr;gap:8px;padding:32px 0;border-top:1px solid var(--line)}
-.benef h3{margin:0;font-size:1.35rem;font-weight:800;letter-spacing:-.01em}
-.benef p{margin:0;color:var(--mut);max-width:52ch}
-@media(min-width:760px){.benef article{grid-template-columns:1fr 1.2fr;gap:48px}}
 .cta{text-align:center;padding:110px 0}
 .cta h2{margin-inline:auto;max-width:16ch}
 .cta .lead{margin-inline:auto;margin-bottom:36px}
@@ -75,7 +70,7 @@ footer img{height:40px;display:block}
 /* ===== Planos ===== */
 .plans{display:grid;gap:32px;margin-top:48px}
 /* Grade flexível: aceita novos planos sem mudar o CSS */
-@media(min-width:900px){.plans{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:stretch}}
+@media(min-width:900px){.plans{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));align-items:stretch}}
 .plan{position:relative;display:flex;flex-direction:column;padding:32px 28px;border:1px solid var(--line);border-radius:24px;background:var(--panel);transition:transform .25s,border-color .25s}
 .plan:hover{transform:translateY(-4px);border-color:#444}
 .plan.pro{border-color:#555;background:linear-gradient(180deg,#151515,#0a0a0a)}
@@ -84,21 +79,16 @@ footer img{height:40px;display:block}
 .plan .ico{width:40px;height:40px;margin-bottom:22px}
 .plan small{color:var(--mut);font-size:.95rem}
 .plan h3{margin:2px 0 10px;font-size:2.1rem;font-weight:800;letter-spacing:-.02em;line-height:1}
-.plan .tag{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin:0 0 22px;line-height:1.6;min-height:3.2em}
+.plan .price{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;line-height:1;margin:6px 0 22px}
+.plan .price span{font-size:.95rem;font-weight:500;color:var(--mut);margin-left:2px}
 .plan ul{list-style:none;padding:22px 0 0;margin:0 0 28px;border-top:1px solid var(--line);display:grid;gap:12px;flex:1;align-content:start}
 .plan li{position:relative;padding-left:24px;font-size:.95rem;color:#e5e5e5}
 .plan li::before{content:"✓";position:absolute;left:0;top:0;font-weight:800;color:var(--fg)}
 .plan li strong{color:var(--fg)}
-.plan .btn{text-align:center}
+.plan .btn{text-align:center;padding:14px 16px}
 .plan:not(.pro):not(.adv) .btn{background:transparent;color:var(--fg);border:1px solid var(--line)}
 .plan:not(.pro):not(.adv) .btn:hover{border-color:var(--fg)}
 .month{display:inline-block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--line);color:var(--mut);padding:6px 12px;border-radius:999px;margin-bottom:16px}
-.assure{display:grid;gap:18px;margin-top:40px;padding-top:32px;border-top:1px solid var(--line)}
-@media(min-width:760px){.assure{grid-template-columns:repeat(3,1fr)}}
-.assure div{display:flex;gap:14px;align-items:flex-start}
-.assure svg{flex:none;width:28px;height:28px}
-.assure b{display:block}
-.assure span{color:var(--mut);font-size:.9rem}
 
 /* ===== Contato ===== */
 .direct{display:grid;gap:12px;margin-top:40px}
@@ -149,7 +139,7 @@ footer img{height:40px;display:block}
       <article>
         <span class="news-tag">Novo</span>
         <h3>Planos mensais</h3>
-        <p>Básico, Pro e Advanced: escolha o plano ideal para o momento do seu negócio.</p>
+        <p>Small, Basic, Pro e Advanced: escolha o plano ideal para o momento do seu negócio.</p>
         <a href="#planos">Ver planos →</a>
       </article>
       <article>
@@ -170,58 +160,49 @@ footer img{height:40px;display:block}
 
 <section id="sobre">
   <h2>Sua empresa está pronta para <b>crescer</b> na internet?</h2>
-  <p class="lead">A SystemCorp transforma tecnologia em oportunidades para o seu negócio. Criamos sites profissionais e desenvolvemos sistemas e estratégias digitais pensados para fortalecer sua presença online, atrair potenciais clientes e impulsionar suas vendas.</p>
-  <p class="lead">Mais do que desenvolver soluções, queremos ajudar sua empresa a evoluir com tecnologia, estratégia e uma experiência digital profissional.</p>
-</section>
-
-<section id="beneficios">
-  <h2>O que você ganha com a <b>SystemCorp</b></h2>
-  <div class="benef">
-    <article>
-      <h3>Mais oportunidades de conquistar clientes</h3>
-      <p>Um site profissional e uma estratégia digital bem planejada ajudam sua empresa a ser encontrada e a apresentar seus serviços com clareza.</p>
-    </article>
-    <article>
-      <h3>Mais potencial para vender</h3>
-      <p>Soluções digitais desenvolvidas para facilitar o contato, apresentar seus diferenciais e transformar o interesse em oportunidades comerciais.</p>
-    </article>
-    <article>
-      <h3>Uma presença digital mais profissional</h3>
-      <p>Fortaleça a credibilidade da sua marca com uma experiência online alinhada à qualidade do seu negócio.</p>
-    </article>
-  </div>
 </section>
 
 <section id="planos">
   <span class="month">Planos mensais</span>
   <h2>Escolha o plano <b>ideal</b> para o seu momento</h2>
-  <p class="lead">Todos os planos incluem acompanhamento da nossa equipe. Toque em um plano e fale com a gente direto pelo WhatsApp.</p>
+  <p class="lead">Toque em um plano e fale com a gente direto pelo WhatsApp.</p>
 
   <div class="plans">
     <article class="plan">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/></svg>
+      <small>Desenvolvimento</small>
+      <h3>Small</h3>
+      <p class="price">R$130</p>
+      <ul>
+        <li>Landing page simples</li>
+      </ul>
+      <a class="btn" href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20tenho%20interesse%20no%20plano%20Desenvolvimento%20Small.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Começar →</a>
+    </article>
+
+    <article class="plan">
       <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg>
       <small>Desenvolvimento</small>
-      <h3>Básico</h3>
-      <p class="tag">Ideal para quem está começando e quer uma presença digital profissional.</p>
+      <h3>Basic</h3>
+      <p class="price">R$220<span>/mês</span></p>
       <ul>
-        <li>Mostruário</li>
-        <li>Site com manutenção e atualizações mensais</li>
+        <li>Landing page completa</li>
+        <li>Manutenção mensal</li>
       </ul>
-      <a class="btn" href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20tenho%20interesse%20no%20plano%20B%C3%A1sico.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Começar agora →</a>
+      <a class="btn" href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20tenho%20interesse%20no%20plano%20Desenvolvimento%20Basic.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Escolher →</a>
     </article>
 
     <article class="plan pro">
       <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
       <small>Desenvolvimento</small>
       <h3>Pro</h3>
-      <p class="tag">Mais do que um site, uma estratégia para o seu crescimento.</p>
+      <p class="price">R$780<span>/mês</span></p>
       <ul>
-        <li>Mostruário</li>
-        <li>Site com manutenção e atualizações mensais</li>
-        <li>Desenvolvimento de estratégias para seu produto</li>
-        <li>Uso de links (emissão de pedidos, acesso a outras abas etc.)</li>
+        <li>Landing page completa</li>
+        <li>Manutenção e atualizações mensais</li>
+        <li>Estratégias para o seu produto</li>
+        <li>Uso de links de acesso (página de vendas, abas extras)</li>
       </ul>
-      <a class="btn" href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20tenho%20interesse%20no%20plano%20Pro.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Escolher o Pro →</a>
+      <a class="btn" href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20tenho%20interesse%20no%20plano%20Desenvolvimento%20Pro.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Escolher →</a>
     </article>
 
     <article class="plan adv">
@@ -229,25 +210,19 @@ footer img{height:40px;display:block}
       <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5L3 8z"/></svg>
       <small>Desenvolvimento</small>
       <h3>Advanced</h3>
-      <p class="tag">Tecnologia, estratégia e inteligência artificial para ir ainda mais longe.</p>
+      <p class="price">R$1130<span>/mês</span></p>
       <ul>
-        <li>Mostruário</li>
-        <li>Site com manutenção e atualizações <strong>semanais</strong></li>
-        <li>Desenvolvimento de estratégias para seu produto</li>
-        <li>Uso de links (emissão de pedidos, acesso a outras abas etc.)</li>
-        <li>IA assistente feita do zero, própria para o seu negócio (exclusiva para clientes)</li>
-        <li>Acompanhamento digital da nossa empresa</li>
+        <li>Landing page completa</li>
+        <li>Manutenção e atualizações <strong>semanais</strong></li>
+        <li>Estratégias específicas para o seu produto</li>
+        <li>Página de vendas completa (uso de links estratégicos, acessos rápidos etc.)</li>
+        <li>Uma inteligência artificial própria para o seu negócio</li>
       </ul>
-      <a class="btn" href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20tenho%20interesse%20no%20plano%20Advanced.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Ir mais longe →</a>
+      <a class="btn" href="https://wa.me/5535992185770?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20SystemCorp%20e%20tenho%20interesse%20no%20plano%20Desenvolvimento%20Advanced.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Escolher →</a>
     </article>
   </div>
   <span class="swipe" aria-hidden="true">Deslize para ver mais →</span>
 
-  <div class="assure">
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><p style="margin:0"><b>Segurança e estabilidade</b><span>Seus dados sempre protegidos.</span></p></div>
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0116 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg><p style="margin:0"><b>Suporte especializado</b><span>Nossa equipe pronta para te atender.</span></p></div>
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 20v-5M10 20v-9M15 20v-12M20 20V4"/></svg><p style="margin:0"><b>Resultados reais</b><span>Mais visibilidade, mais clientes, mais vendas.</span></p></div>
-  </div>
 </section>
 
 <section id="orcamento">
