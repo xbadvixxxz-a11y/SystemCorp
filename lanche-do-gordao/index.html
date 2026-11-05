@@ -494,7 +494,12 @@ $("enviar").addEventListener("click", () => {
     $("erro").textContent = "Número do WhatsApp ainda não configurado. Você poderá escolher o contato no WhatsApp.";
   }
   const url = numero ? `https://wa.me/${numero}?text=${texto}` : `https://wa.me/?text=${texto}`;
-  window.open(url, "_blank", "noopener");
+  // No celular, abre o app do WhatsApp na mesma aba (pop-ups costumam ser bloqueados).
+  // No computador, tenta uma nova aba e, se for bloqueada, abre na mesma.
+  const celular = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  if (celular) { window.location.href = url; return; }
+  const w = window.open(url, "_blank");
+  if (w) w.opener = null; else window.location.href = url;
 });
 
 render();
