@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -64,14 +64,29 @@ nav.menu a:hover,nav.menu a.ativo{color:var(--amarelo);border-color:var(--amarel
 .hero p{color:#d7d7d7;max-width:40ch;margin:18px 0 26px;font-size:1.05rem}
 .hero .acoes{display:flex;flex-wrap:wrap;gap:12px}
 .hero-foto{position:relative;max-width:540px;margin:0 auto;width:100%}
-.hero-foto img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 88%;-webkit-mask-image:radial-gradient(closest-side,#000 70%,transparent 100%);mask-image:radial-gradient(closest-side,#000 70%,transparent 100%)}
-.selo{position:absolute;right:6%;bottom:6%;width:120px;height:120px;border-radius:50%;border:2px solid var(--amarelo);background:rgba(11,11,11,.85);display:grid;place-items:center;text-align:center;font-family:Oswald,sans-serif;text-transform:uppercase;color:var(--amarelo);line-height:1.05;transform:rotate(-10deg);box-shadow:0 0 0 6px rgba(11,11,11,.6)}
+.hero-foto{animation:flutuar 5s ease-in-out infinite}
+@keyframes flutuar{50%{translate:0 -14px}}
+.hero-foto img{transform:translateY(var(--py,0px)) rotate(var(--rot,0deg)) scale(var(--sc,1));will-change:transform;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 88%;-webkit-mask-image:radial-gradient(closest-side,#000 70%,transparent 100%);mask-image:radial-gradient(closest-side,#000 70%,transparent 100%)}
+.selo{animation:girar-selo 7s ease-in-out infinite;position:absolute;right:6%;bottom:6%;width:120px;height:120px;border-radius:50%;border:2px solid var(--amarelo);background:rgba(11,11,11,.85);display:grid;place-items:center;text-align:center;font-family:Oswald,sans-serif;text-transform:uppercase;color:var(--amarelo);line-height:1.05;transform:rotate(-10deg);box-shadow:0 0 0 6px rgba(11,11,11,.6)}
 .selo b{display:block;font-size:1.55rem}
 .selo small{display:block;font-size:.68rem;letter-spacing:.12em;color:#ddd}
 @media (min-width:900px){
   .hero .wrap{grid-template-columns:1.05fr 1fr;padding-top:56px;padding-bottom:64px}
   .hero-foto{margin:0 0 0 auto}
 }
+
+
+main{overflow-x:clip}
+/* Faixa que corre com a rolagem */
+.faixa{background:var(--amarelo);color:#111;overflow:hidden;white-space:nowrap;border-block:2px solid #111;transform:rotate(-1.5deg);margin:-6px -10px;position:relative;z-index:2}
+.faixa div{display:inline-flex;gap:28px;padding:10px 0;font-family:Oswald,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1rem,2.6vw,1.35rem);transform:translateX(var(--fx,0px));will-change:transform}
+.faixa span::after{content:"★";margin-left:28px}
+
+/* Entrada animada ao rolar */
+@keyframes girar-selo{50%{transform:rotate(6deg) scale(1.06)}}
+.js .revelar{opacity:0;transform:translateY(46px) scale(.94) rotate(var(--r0,0deg));transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1.15);transition-delay:var(--d,0s)}
+.js .revelar.visivel{opacity:1;transform:none}
+.js .card.revelar.visivel:hover{transform:translateY(-6px)}
 
 /* Faixa de destaques */
 .destaques{background:var(--grafite);border-top:1px solid var(--linha-esc);border-bottom:1px solid var(--linha-esc)}
@@ -99,7 +114,7 @@ nav.menu a:hover,nav.menu a.ativo{color:var(--amarelo);border-color:var(--amarel
 .seta:hover{background:var(--amarelo);color:#111}
 .bloco-bebidas{margin-top:40px}
 
-.trilho{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 22px;margin:0 -16px;scrollbar-width:thin;scrollbar-color:var(--amarelo) var(--linha);-webkit-overflow-scrolling:touch}
+.trilho{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;padding:6px 16px 22px;margin:0 -16px;scrollbar-width:thin;scrollbar-color:var(--amarelo) var(--linha);-webkit-overflow-scrolling:touch}
 .trilho::-webkit-scrollbar{height:8px}
 .trilho::-webkit-scrollbar-track{background:var(--linha);border-radius:8px}
 .trilho::-webkit-scrollbar-thumb{background:var(--amarelo);border-radius:8px}
@@ -107,11 +122,12 @@ nav.menu a:hover,nav.menu a.ativo{color:var(--amarelo);border-color:var(--amarel
 .card{flex:0 0 260px;scroll-snap-align:start;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(0,0,0,.14)}
 .card .foto{position:relative;overflow:hidden;height:190px;background:#111}
-.card .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.card:hover .foto img{transform:scale(1.05)}
+.card .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;--sc:1.12;transform:translateY(var(--py,0px)) rotate(var(--rot,0deg)) scale(var(--sc));transition:transform .5s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.card:hover .foto img{--sc:1.2}
 .card.bebida .foto{height:150px;background:#fff;border-bottom:1px solid var(--linha)}
 .card.bebida .foto img{object-fit:contain;padding:20px 26px}
-.card.bebida:hover .foto img{transform:none}
+.card.bebida .foto img{--sc:1}
+.card.bebida:hover .foto img{--sc:1.08}
 .card .corpo{padding:16px 16px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card h3{font-size:1.12rem;font-weight:600;letter-spacing:.03em;color:#111}
 .card .desc{margin:0;color:var(--cinza);font-size:.86rem;flex:1}
@@ -124,7 +140,8 @@ nav.menu a:hover,nav.menu a.ativo{color:var(--amarelo);border-color:var(--amarel
 /* Combo + Sobre (seção dividida) */
 .dividida{display:grid;grid-template-columns:1fr}
 .combo{position:relative;background:#0f0f0f;overflow:hidden;display:grid;grid-template-columns:1fr;align-items:center}
-.combo .foto img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover}
+.combo .foto{overflow:hidden}
+.combo .foto img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(var(--rot,0deg)) scale(var(--sc,1.15));transition:transform .3s linear;will-change:transform}
 .combo .texto{padding:28px 22px 36px}
 .combo .script{font-size:1.6rem;transform:rotate(-4deg);transform-origin:left}
 .combo h2{font-size:clamp(2.8rem,8vw,3.8rem);font-weight:700}
@@ -214,12 +231,22 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
 
 @media (max-width:520px){
   .setas{display:none}
-  .card{flex-basis:76%}
+  .trilho{gap:12px}
+  .card{flex-basis:42%;min-width:150px;border-radius:8px}
+  .card .foto{height:118px}
+  .card.bebida .foto{height:92px}
+  .card.bebida .foto img{padding:12px 14px}
+  .card .corpo{padding:10px 10px 12px;gap:4px}
+  .card h3{font-size:.9rem}
+  .card .desc{flex:0 0 auto;font-size:.72rem;line-height:1.35;max-height:calc(1.35em * 3);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .card .rodape{margin-top:auto;padding-top:6px}
+  .preco{font-size:1.05rem}
+  .add{width:32px;height:32px;font-size:1.2rem}
   .btn-pedido .txt{display:none}
   .marca img{height:46px}
   body.tem-itens{padding-bottom:80px}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.js .revelar{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -267,6 +294,8 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
       </div>
     </div>
   </section>
+
+  <div class="faixa" aria-hidden="true"><div id="faixaTexto"></div></div>
 
   <section class="destaques" aria-label="Destaques">
     <div class="wrap">
@@ -649,6 +678,65 @@ $("enviar").addEventListener("click", () => {
   const w = window.open(url, "_blank");
   if (w) w.opener = null; else window.location.href = url;
 });
+
+/* ===================== Movimento ===================== */
+const semMovimento = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Faixa: repete o texto para preencher a largura */
+$("faixaTexto").innerHTML = Array(12).fill("<span>Lanche do Gordão</span><span>Feito na hora</span><span>Peça pelo WhatsApp</span>").join("");
+
+/* Entrada dos elementos ao aparecer na tela */
+document.querySelectorAll(".sec-topo, .destaque, .combo .texto, .sobre > div, .emblema").forEach(el => el.classList.add("revelar"));
+document.querySelectorAll(".trilho").forEach(t => [...t.children].forEach((c, i) => {
+  c.classList.add("revelar"); c.style.setProperty("--d", (i * 0.09) + "s"); c.style.setProperty("--r0", (i % 2 ? 3 : -3) + "deg");
+}));
+document.querySelectorAll(".destaque").forEach((c, i) => c.style.setProperty("--d", (i * 0.1) + "s"));
+if (!semMovimento && "IntersectionObserver" in window) {
+  const io = new IntersectionObserver(ents => ents.forEach(en => {
+    if (en.isIntersecting) { const el = en.target; el.classList.add("visivel"); io.unobserve(el); setTimeout(() => el.style.setProperty("--d", "0s"), 1600); }
+  }), { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+  document.querySelectorAll(".revelar").forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll(".revelar").forEach(el => el.classList.add("visivel"));
+}
+
+/* Produtos que se mexem conforme a rolagem */
+const heroImg = document.querySelector(".hero-foto img");
+const comboImg = document.querySelector(".combo .foto img");
+const fotos = [...document.querySelectorAll(".card .foto img")];
+let pendente = false;
+function mover() {
+  pendente = false;
+  const vh = innerHeight, y = scrollY;
+  if (heroImg && y < vh * 1.2) {
+    heroImg.style.setProperty("--py", (y * 0.18) + "px");
+    heroImg.style.setProperty("--rot", (y * -0.025) + "deg");
+    heroImg.style.setProperty("--sc", 1 + Math.min(y, 600) * 0.0003);
+  }
+  $("faixaTexto").style.setProperty("--fx", (-y * 0.45) + "px");
+  fotos.forEach((img, i) => {
+    const r = img.parentElement.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > vh) return;
+    const p = ((r.top + r.height / 2) / vh - 0.5) * 2;   // -1 (topo) a 1 (base)
+    img.style.setProperty("--py", (p * 14) + "px");
+    img.style.setProperty("--rot", (p * (i % 2 ? 4 : -4)) + "deg");
+  });
+  if (comboImg) {
+    const r = comboImg.getBoundingClientRect();
+    if (r.bottom > 0 && r.top < vh) {
+      const p = ((r.top + r.height / 2) / vh - 0.5) * 2;
+      comboImg.style.setProperty("--rot", (p * -8) + "deg");
+      comboImg.style.setProperty("--sc", 1.15 - Math.abs(p) * 0.05);
+    }
+  }
+}
+if (!semMovimento) {
+  const pedir = () => { if (!pendente) { pendente = true; requestAnimationFrame(mover); } };
+  addEventListener("scroll", pedir, { passive: true });
+  addEventListener("resize", pedir);
+  document.querySelectorAll(".trilho").forEach(t => t.addEventListener("scroll", pedir, { passive: true }));
+  mover();
+}
 
 render();
 </script>
