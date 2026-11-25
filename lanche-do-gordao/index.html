@@ -63,17 +63,35 @@ nav.menu a:hover,nav.menu a.ativo{color:var(--amarelo);border-color:var(--amarel
 .hero h1 span{color:var(--amarelo)}
 .hero p{color:#d7d7d7;max-width:40ch;margin:18px 0 26px;font-size:1.05rem}
 .hero .acoes{display:flex;flex-wrap:wrap;gap:12px}
-.hero-foto{position:relative;max-width:540px;margin:0 auto;width:100%}
+.hero .wrap>div:first-child{position:relative;z-index:2}
+.hero-foto{position:relative;max-width:470px;margin:0 auto;width:100%;z-index:1}
+.hero-foto::before{content:"";position:absolute;inset:12% 6% 16%;border-radius:50%;background:radial-gradient(closest-side,rgba(253,185,19,.38),transparent);filter:blur(30px);z-index:-1;animation:brilho 5s ease-in-out infinite}
+@keyframes brilho{50%{opacity:.55;transform:scale(1.08)}}
 .hero-foto{animation:flutuar 5s ease-in-out infinite}
 @keyframes flutuar{50%{translate:0 -14px}}
-.hero-foto img{transform:translateY(var(--py,0px)) rotate(var(--rot,0deg)) scale(var(--sc,1));will-change:transform;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 88%;-webkit-mask-image:radial-gradient(closest-side,#000 70%,transparent 100%);mask-image:radial-gradient(closest-side,#000 70%,transparent 100%)}
-.selo{animation:girar-selo 7s ease-in-out infinite;position:absolute;right:6%;bottom:6%;width:120px;height:120px;border-radius:50%;border:2px solid var(--amarelo);background:rgba(11,11,11,.85);display:grid;place-items:center;text-align:center;font-family:Oswald,sans-serif;text-transform:uppercase;color:var(--amarelo);line-height:1.05;transform:rotate(-10deg);box-shadow:0 0 0 6px rgba(11,11,11,.6)}
+.hero-foto img{transform:translateY(var(--py,0px)) rotate(var(--rot,0deg)) scale(var(--sc,1));will-change:transform;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 48%,#000 58%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 48%,#000 58%,transparent 100%)}
+.selo{animation:girar-selo 7s ease-in-out infinite;position:absolute;right:0;bottom:14%;width:120px;height:120px;border-radius:50%;border:2px solid var(--amarelo);background:rgba(11,11,11,.85);display:grid;place-items:center;text-align:center;font-family:Oswald,sans-serif;text-transform:uppercase;color:var(--amarelo);line-height:1.05;transform:rotate(-10deg);box-shadow:0 0 0 6px rgba(11,11,11,.6)}
 .selo b{display:block;font-size:1.55rem}
 .selo small{display:block;font-size:.68rem;letter-spacing:.12em;color:#ddd}
 @media (min-width:900px){
-  .hero .wrap{grid-template-columns:1.05fr 1fr;padding-top:56px;padding-bottom:64px}
+  .hero .wrap{grid-template-columns:1.05fr 1fr;padding-top:24px;padding-bottom:24px}
   .hero-foto{margin:0 0 0 auto}
 }
+/* Celular: hambúrguer grande em cima, texto entrando por baixo dele */
+@media (max-width:899px){
+  .hero .wrap{padding-top:0;gap:0}
+  .hero-foto{order:-1;max-width:460px}
+  .hero-foto img{height:58svh;min-height:380px;object-fit:cover;object-position:center 40%;-webkit-mask-image:radial-gradient(ellipse 52% 50% at 50% 44%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 52% 50% at 50% 44%,#000 55%,transparent 100%)}
+  .hero .wrap>div:first-child{position:relative;z-index:2;margin-top:-70px}
+  .hero h1{text-shadow:0 4px 24px rgba(0,0,0,.8)}
+  .selo{width:96px;height:96px;bottom:auto;top:18%;right:2%}
+  .selo b{font-size:1.2rem}
+}
+
+/* Gergelins voando no topo */
+.gergelim{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.gergelim i{position:absolute;left:var(--x);top:var(--y);width:calc(7px * var(--t));height:calc(11px * var(--t));border-radius:50%;background:radial-gradient(circle at 35% 30%,#fffaf0,#e9d3a4 60%,#c9a86a);box-shadow:0 2px 4px rgba(0,0,0,.5);transform:translateY(calc(var(--sy,0) * var(--z) * -1px)) rotate(var(--r));animation:pairar var(--dur) ease-in-out var(--del) infinite;filter:blur(calc((1 - var(--t)) * 2px))}
+@keyframes pairar{50%{translate:var(--dx) -18px;rotate:40deg}}
 
 
 main{overflow-x:clip}
@@ -239,16 +257,16 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
 @media (max-width:520px){
   .setas{display:none}
   .trilho{gap:12px}
-  .card{flex-basis:42%;min-width:150px;border-radius:8px}
-  .card .foto{height:118px}
-  .card.bebida .foto{height:92px}
+  .card{flex-basis:37%;min-width:132px;border-radius:8px}
+  .card .foto{height:100px}
+  .card.bebida .foto{height:80px}
   .card.bebida .foto img{padding:12px 14px}
   .card .corpo{padding:10px 10px 12px;gap:4px}
-  .card h3{font-size:.9rem}
+  .card h3{font-size:.82rem}
   .card .desc{flex:0 0 auto;font-size:.72rem;line-height:1.35;max-height:calc(1.35em * 3);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .card .rodape{margin-top:auto;padding-top:6px}
-  .preco{font-size:1.05rem}
-  .add{width:32px;height:32px;font-size:1.2rem}
+  .preco{font-size:.98rem}
+  .add{width:30px;height:30px;font-size:1.1rem}
   .btn-pedido .txt{display:none}
   .marca img{height:46px}
   body.tem-itens{padding-bottom:80px}
@@ -286,6 +304,7 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
 
 <main>
   <section class="hero" id="inicio">
+    <div class="gergelim" id="gergelim" aria-hidden="true"></div>
     <div class="wrap">
       <div>
         <span class="script">Feito na hora. Feito pra matar a fome.</span>
@@ -302,7 +321,7 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
         </div>
       </div>
       <div class="hero-foto">
-        <img src="img/gordao-bruto.jpg" alt="Gordão Bruto: hambúrguer duplo com cheddar e bacon" width="535" height="900">
+        <img src="img/hero-burger.jpg" alt="Hambúrguer com os ingredientes flutuando" width="750" height="1310" fetchpriority="high">
         <div class="selo" aria-hidden="true"><div><small>Feito</small><b>na hora</b><small>todo dia</small></div></div>
       </div>
     </div>
@@ -698,6 +717,12 @@ const semMovimento = matchMedia("(prefers-reduced-motion: reduce)").matches;
 /* Faixa: repete o texto para preencher a largura */
 $("faixaTexto").innerHTML = Array(12).fill("<span>Lanche do Gordão</span><span>Feito na hora</span><span>Peça pelo WhatsApp</span>").join("");
 
+/* Gergelins espalhados no topo (posições aleatórias) */
+$("gergelim").innerHTML = Array.from({ length: innerWidth < 600 ? 14 : 22 }, () => {
+  const t = 0.55 + Math.random() * 0.75, rnd = (a, b) => a + Math.random() * (b - a);
+  return `<i style="--x:${rnd(2, 96)}%;--y:${rnd(4, 92)}%;--t:${t.toFixed(2)};--z:${(t * 0.6).toFixed(2)};--r:${rnd(0, 180) | 0}deg;--dx:${rnd(-14, 14) | 0}px;--dur:${rnd(4, 8).toFixed(1)}s;--del:${-rnd(0, 6).toFixed(1)}s"></i>`;
+}).join("");
+
 /* Entrada dos elementos ao aparecer na tela */
 document.querySelectorAll(".sec-topo, .destaque, .combo .texto, .sobre > div, .emblema").forEach(el => el.classList.add("revelar"));
 document.querySelectorAll(".trilho").forEach(t => [...t.children].forEach((c, i) => {
@@ -722,9 +747,10 @@ function mover() {
   pendente = false;
   const vh = innerHeight, y = scrollY;
   if (heroImg && y < vh * 1.2) {
-    heroImg.style.setProperty("--py", (y * 0.18) + "px");
-    heroImg.style.setProperty("--rot", (y * -0.025) + "deg");
-    heroImg.style.setProperty("--sc", 1 + Math.min(y, 600) * 0.0003);
+    heroImg.style.setProperty("--py", (y * 0.22) + "px");
+    heroImg.style.setProperty("--rot", (y * -0.04) + "deg");
+    heroImg.style.setProperty("--sc", 1 + Math.min(y, 700) * 0.0005);
+    $("gergelim").style.setProperty("--sy", y);
   }
   $("faixaTexto").style.setProperty("--fx", (-y * 0.45) + "px");
   fotos.forEach((img, i) => {
