@@ -43,7 +43,7 @@ a{color:inherit}
 .btn svg{width:18px;height:18px;flex:none}
 
 /* Topo */
-header{position:sticky;top:0;z-index:20;background:rgba(11,11,11,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha-esc)}
+header{position:sticky;top:0;z-index:20;background:var(--preto);border-bottom:1px solid var(--linha-esc)}
 .topo{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
 .marca img{height:54px;width:auto;mix-blend-mode:lighten}
 nav.menu{display:flex;gap:28px}
@@ -56,7 +56,7 @@ nav.menu a:hover,nav.menu a.ativo{color:var(--amarelo);border-color:var(--amarel
 @media (max-width:900px){nav.menu{display:none}}
 
 /* Hero */
-.hero{position:relative;overflow:hidden;background:radial-gradient(70% 80% at 75% 45%,#2a1d06 0%,var(--preto) 62%)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(70% 80% at 75% 45%,rgba(60,40,8,.55) 0%,transparent 62%)}
 .hero .wrap{display:grid;grid-template-columns:1fr;gap:12px;align-items:center;padding-top:36px;padding-bottom:40px}
 .hero .script{font-size:clamp(1.2rem,3vw,1.6rem);margin-bottom:10px;transform:rotate(-3deg);transform-origin:left}
 .hero h1{font-size:clamp(3.2rem,10vw,6.2rem);font-weight:700}
@@ -77,6 +77,13 @@ nav.menu a:hover,nav.menu a.ativo{color:var(--amarelo);border-color:var(--amarel
 
 
 main{overflow-x:clip}
+
+/* Fumaça de fundo: fica atrás de tudo; as seções claras a cobrem */
+.fumaca{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:var(--preto)}
+.fumaca video,.fumaca img{width:100%;height:100%;object-fit:cover;opacity:.42;filter:sepia(.35) saturate(1.4) brightness(.9)}
+.fumaca::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 40%,transparent 35%,rgba(0,0,0,.55) 100%)}
+@media (prefers-reduced-motion:reduce){.fumaca video{display:none}}
+
 /* Faixa que corre com a rolagem */
 .faixa{background:var(--amarelo);color:#111;overflow:hidden;white-space:nowrap;border-block:2px solid #111;transform:rotate(-1.5deg);margin:-6px -10px;position:relative;z-index:2}
 .faixa div{display:inline-flex;gap:28px;padding:10px 0;font-family:Oswald,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1rem,2.6vw,1.35rem);transform:translateX(var(--fx,0px));will-change:transform}
@@ -89,7 +96,7 @@ main{overflow-x:clip}
 .js .card.revelar.visivel:hover{transform:translateY(-6px)}
 
 /* Faixa de destaques */
-.destaques{background:var(--grafite);border-top:1px solid var(--linha-esc);border-bottom:1px solid var(--linha-esc)}
+.destaques{background:rgba(20,20,20,.55);position:relative;border-top:1px solid var(--linha-esc);border-bottom:1px solid var(--linha-esc)}
 .destaques .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
 .destaque{display:flex;gap:14px;align-items:flex-start;padding:22px 12px}
 .destaque svg{flex:none;width:40px;height:40px;color:var(--amarelo)}
@@ -139,7 +146,7 @@ main{overflow-x:clip}
 
 /* Combo + Sobre (seção dividida) */
 .dividida{display:grid;grid-template-columns:1fr}
-.combo{position:relative;background:#0f0f0f;overflow:hidden;display:grid;grid-template-columns:1fr;align-items:center}
+.combo{position:relative;background:rgba(15,15,15,.45);overflow:hidden;display:grid;grid-template-columns:1fr;align-items:center}
 .combo .foto{overflow:hidden}
 .combo .foto img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(var(--rot,0deg)) scale(var(--sc,1.15));transition:transform .3s linear;will-change:transform}
 .combo .texto{padding:28px 22px 36px}
@@ -165,7 +172,7 @@ main{overflow-x:clip}
 }
 
 /* Rodapé */
-footer{background:var(--preto);border-top:1px solid var(--linha-esc);color:var(--cinza-claro);font-size:.9rem}
+footer{background:rgba(11,11,11,.5);position:relative;border-top:1px solid var(--linha-esc);color:var(--cinza-claro);font-size:.9rem}
 .rodape-grade{display:grid;grid-template-columns:1fr;gap:28px;padding:40px 16px 28px}
 .rodape-grade img{height:72px;width:auto;mix-blend-mode:lighten}
 .rodape-grade h4{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--amarelo);font-weight:600;font-size:.95rem;margin:0 0 10px}
@@ -250,6 +257,12 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
 </style>
 </head>
 <body>
+<div class="fumaca" aria-hidden="true">
+  <video autoplay muted loop playsinline preload="auto" poster="img/fumaca.jpg">
+    <source src="img/fumaca.webm" type="video/webm">
+    <source src="img/fumaca.mp4" type="video/mp4">
+  </video>
+</div>
 
 <header>
   <div class="wrap topo">
