@@ -213,19 +213,12 @@ main{overflow-x:clip}
 
 /* Rodapé */
 footer{background:rgba(11,11,11,.5);position:relative;border-top:1px solid var(--linha-esc);color:var(--cinza-claro);font-size:.9rem}
-.rodape-grade{display:grid;grid-template-columns:1fr;gap:28px;padding:40px 16px 28px}
-.rodape-grade img{height:72px;width:auto;mix-blend-mode:lighten}
+.rodape-grade{padding:36px 16px 28px;text-align:center}
 .rodape-grade h4{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--amarelo);font-weight:600;font-size:.95rem;margin:0 0 10px}
-.rodape-grade ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.rodape-grade ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;justify-items:center}
 .rodape-grade a{text-decoration:none;color:#ddd}
 .rodape-grade a:hover{color:var(--amarelo)}
-.caixa-pedido{display:flex;align-items:center;gap:14px;border:1.5px solid var(--amarelo);border-radius:6px;padding:14px 16px;background:transparent;color:#fff;text-align:left;width:100%;max-width:320px;transition:background .2s}
-.caixa-pedido:hover{background:rgba(253,185,19,.1)}
-.caixa-pedido svg{width:28px;height:28px;color:var(--amarelo);flex:none}
-.caixa-pedido small{display:block;color:var(--cinza-claro);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
-.caixa-pedido b{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.06em}
 .copy{border-top:1px solid var(--linha-esc);text-align:center;padding:16px;font-size:.8rem;color:#8a8a8a}
-@media (min-width:760px){.rodape-grade{grid-template-columns:1.1fr 1fr 1fr 1.3fr;padding:48px 16px 32px}}
 
 /* Carrinho (aba lateral) */
 .fundo-escuro{position:fixed;inset:0;background:rgba(0,0,0,.65);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
@@ -474,34 +467,12 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
 
 <footer>
   <div class="wrap rodape-grade">
-    <div>
-      <img src="img/logo.webp" alt="Lanche do Gordão" width="108" height="72">
-    </div>
-    <div>
-      <h4>Links rápidos</h4>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#cardapio">Cardápio</a></li>
-        <li><a href="#bebidas">Bebidas</a></li>
-        <li><a href="#combo">Combo</a></li>
-        <li><a href="#local">Onde estamos</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Contato</h4>
-      <ul>
-        <li>Av. Idelfonso Delegado Bianco<br>Cássia - MG, 37980-000</li>
-        <li id="rodapeHorario">Das 18:30 às 23:30</li>
-        <li><a id="linkWhats" href="#">WhatsApp</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Peça agora</h4>
-      <button class="caixa-pedido" data-abrir-carrinho>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
-        <span><small>Monte seu pedido</small><b>Pedir pelo WhatsApp</b></span>
-      </button>
-    </div>
+    <h4>Contato</h4>
+    <ul>
+      <li>Av. Idelfonso Delegado Bianco, Cássia - MG, 37980-000</li>
+      <li id="rodapeHorario">Das 18:30 às 23:30</li>
+      <li><a id="linkWhats" href="#">WhatsApp</a></li>
+    </ul>
   </div>
   <div class="copy">© <span id="ano"></span> Lanche do Gordão. Todos os direitos reservados.</div>
 </footer>
