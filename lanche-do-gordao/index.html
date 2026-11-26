@@ -189,6 +189,28 @@ main{overflow-x:clip}
   .sobre{grid-template-columns:1.3fr 1fr;padding:48px 44px}
 }
 
+
+/* Onde estamos */
+.local{position:relative;padding:56px 0}
+.local .wrap{display:grid;grid-template-columns:1fr;gap:24px;align-items:stretch}
+.local .sec-topo h2{color:#fff}
+.info-lista{display:grid;gap:14px;margin-top:8px}
+.info{display:flex;gap:14px;align-items:flex-start;background:rgba(20,20,20,.7);border:1px solid var(--linha-esc);border-radius:10px;padding:16px 18px}
+.info svg{flex:none;width:30px;height:30px;color:var(--amarelo);margin-top:2px}
+.info h3{font-size:1rem;letter-spacing:.06em;font-weight:600;color:var(--amarelo)}
+.info p{margin:4px 0 0;color:#e5e5e5}
+.info .acoes-info{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.info .btn{padding:9px 14px;font-size:.82rem}
+.status{display:inline-flex;align-items:center;gap:6px;margin-left:8px;padding:2px 10px;border-radius:999px;font-family:Poppins,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.02em;text-transform:none;vertical-align:middle}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.status.aberto{background:rgba(37,211,102,.15);color:#3ddc7a}
+.status.aberto::before{animation:piscar 1.4s ease-in-out infinite}
+.status.fechado{background:rgba(255,107,107,.15);color:#ff8a8a}
+@keyframes piscar{50%{opacity:.3}}
+.mapa{border-radius:10px;overflow:hidden;border:1px solid var(--linha-esc);min-height:320px;background:#1a1a1a}
+.mapa iframe{width:100%;height:100%;min-height:320px;border:0;display:block;filter:grayscale(.2) contrast(1.05)}
+@media (min-width:900px){.local .wrap{grid-template-columns:1fr 1.2fr}}
+
 /* Rodapé */
 footer{background:rgba(11,11,11,.5);position:relative;border-top:1px solid var(--linha-esc);color:var(--cinza-claro);font-size:.9rem}
 .rodape-grade{display:grid;grid-template-columns:1fr;gap:28px;padding:40px 16px 28px}
@@ -293,6 +315,7 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
       <a href="#bebidas">Bebidas</a>
       <a href="#combo">Combo</a>
       <a href="#sobre">Sobre</a>
+      <a href="#local">Local</a>
     </nav>
     <button class="btn btn-amarelo btn-pedido" id="abrirCarrinho" aria-controls="carrinho" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a1.5 1.5 0 0 0 1.5 1.1h8.9a1.5 1.5 0 0 0 1.4-1.1L22 7H6"/></svg>
@@ -403,6 +426,50 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
       </svg>
     </div>
   </section>
+
+  <section class="local" id="local">
+    <div class="wrap">
+      <div>
+        <div class="sec-topo">
+          <div>
+            <span class="script">Venha nos visitar</span>
+            <h2>Onde estamos</h2>
+          </div>
+        </div>
+        <div class="info-lista">
+          <div class="info revelar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <div>
+              <h3>Endereço</h3>
+              <p>Av. Idelfonso Delegado Bianco<br>Cássia - MG, 37980-000</p>
+              <div class="acoes-info"><a class="btn btn-amarelo" id="linkRota" href="#" target="_blank" rel="noopener">Como chegar</a></div>
+            </div>
+          </div>
+          <div class="info revelar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <div>
+              <h3>Horário <span class="status" id="statusAberto" hidden></span></h3>
+              <p id="textoHorario">Das 18:30 às 23:30</p>
+            </div>
+          </div>
+          <div class="info revelar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            <div>
+              <h3>Telefone e WhatsApp</h3>
+              <p class="tel-texto">(35) 99953-6900</p>
+              <div class="acoes-info">
+                <a class="btn btn-amarelo" id="linkWhatsLocal" href="#" target="_blank" rel="noopener">WhatsApp</a>
+                <a class="btn btn-contorno" id="linkTel" href="#">Ligar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mapa revelar">
+        <iframe id="mapa" title="Mapa: Lanche do Gordão em Cássia - MG" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -417,13 +484,14 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
         <li><a href="#cardapio">Cardápio</a></li>
         <li><a href="#bebidas">Bebidas</a></li>
         <li><a href="#combo">Combo</a></li>
+        <li><a href="#local">Onde estamos</a></li>
       </ul>
     </div>
     <div>
-      <h4>Pedidos</h4>
+      <h4>Contato</h4>
       <ul>
-        <li>Entrega e retirada</li>
-        <li>Pix, dinheiro ou cartão</li>
+        <li>Av. Idelfonso Delegado Bianco<br>Cássia - MG, 37980-000</li>
+        <li id="rodapeHorario">Das 18:30 às 23:30</li>
         <li><a id="linkWhats" href="#">WhatsApp</a></li>
       </ul>
     </div>
@@ -500,7 +568,11 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
              "img": caminho da foto (ex.: "img/x.jpg").
              O primeiro combo aparece em destaque na seção "Combo".
    ===================================================================== */
-const WHATSAPP = "5535991055992";
+const WHATSAPP = "5535999536900";
+
+/* Horário de funcionamento (24h). DIAS_FECHADOS: 0 = domingo ... 6 = sábado. Ex.: [1] fecha às segundas. */
+const ABRE = "18:30", FECHA = "23:30";
+const DIAS_FECHADOS = [];
 
 const COMBOS = [
   { id:"c1", nome:"Combo Gordão", desc:"4 lanches com cheddar + porção de batata frita. Ideal pra dividir com a galera.", preco:55.00, img:"img/combo.jpg" }
@@ -565,6 +637,28 @@ $("trilhoBebidas").innerHTML = BEBIDAS.map(p => cardHTML(p, "bebida")).join("");
 $("ano").textContent = new Date().getFullYear();
 $("linkWhats").href = `https://wa.me/${WHATSAPP}`;
 $("linkWhats").textContent = "WhatsApp " + WHATSAPP.replace(/^55(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+
+/* Onde estamos: links, mapa e "aberto agora" */
+const ENDERECO = "Av. Idelfonso Delegado Bianco, Cássia - MG, 37980-000";
+$("linkWhatsLocal").href = `https://wa.me/${WHATSAPP}`;
+$("linkTel").href = `tel:+${WHATSAPP}`;
+$("linkRota").href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ENDERECO)}`;
+$("mapa").src = `https://maps.google.com/maps?q=${encodeURIComponent(ENDERECO)}&z=16&output=embed`;
+const horarioTxt = `Das ${ABRE} às ${FECHA}`;
+$("textoHorario").textContent = horarioTxt; $("rodapeHorario").textContent = horarioTxt;
+function atualizarStatus() {
+  // Usa o horário de Brasília, mesmo que o celular do cliente esteja em outro fuso.
+  const agora = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }));
+  const min = agora.getHours() * 60 + agora.getMinutes();
+  const m = t => { const [h, mm] = t.split(":").map(Number); return h * 60 + mm; };
+  const a = m(ABRE), f = m(FECHA);
+  const noHorario = a < f ? (min >= a && min < f) : (min >= a || min < f);
+  const aberto = noHorario && !DIAS_FECHADOS.includes(agora.getDay());
+  const st = $("statusAberto");
+  st.hidden = false; st.className = "status " + (aberto ? "aberto" : "fechado");
+  st.textContent = aberto ? "Aberto agora" : "Fechado agora";
+}
+atualizarStatus(); setInterval(atualizarStatus, 60000);
 
 document.querySelectorAll(".seta").forEach(b => b.addEventListener("click", () => {
   const t = $(b.dataset.alvo);
