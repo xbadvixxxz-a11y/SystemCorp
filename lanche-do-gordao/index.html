@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lanche do Gordão</title>
-<meta name="description" content="Lanche do Gordão — hambúrgueres caprichados, combo pra galera e refrigerante gelado. Monte seu pedido e envie pelo WhatsApp.">
+<title>Monstro Burguer</title>
+<meta name="description" content="Monstro Burguer — hambúrgueres caprichados, combo pra galera e refrigerante gelado. Monte seu pedido e envie pelo WhatsApp.">
 <meta name="theme-color" content="#0b0b0b">
 <link rel="icon" href="img/logo.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@ a{color:inherit}
 /* Topo */
 header{position:sticky;top:0;z-index:20;background:var(--preto);border-bottom:1px solid var(--linha-esc)}
 .topo{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
-.marca img{height:54px;width:auto;mix-blend-mode:lighten}
+.marca img{height:62px;width:auto;mix-blend-mode:lighten}
 nav.menu{display:flex;gap:28px}
 nav.menu a{font-family:Oswald,sans-serif;text-transform:uppercase;font-weight:500;letter-spacing:.06em;font-size:.92rem;text-decoration:none;color:#fff;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
 nav.menu a:hover,nav.menu a.ativo{color:var(--amarelo);border-color:var(--amarelo)}
@@ -283,7 +283,7 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
   .preco{font-size:.98rem}
   .add{width:30px;height:30px;font-size:1.1rem}
   .btn-pedido .txt{display:none}
-  .marca img{height:46px}
+  .marca img{height:54px}
   body.tem-itens{padding-bottom:80px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.js .revelar{opacity:1;transform:none}}
@@ -299,8 +299,8 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
 
 <header>
   <div class="wrap topo">
-    <a class="marca" href="#inicio" aria-label="Lanche do Gordão — início">
-      <img src="img/logo.webp" alt="Lanche do Gordão" width="81" height="54">
+    <a class="marca" href="#inicio" aria-label="Monstro Burguer — início">
+      <img src="img/logo.webp" alt="Monstro Burguer" width="60" height="60">
     </a>
     <nav class="menu" aria-label="Menu principal">
       <a href="#inicio" class="ativo">Início</a>
@@ -324,7 +324,7 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
     <div class="wrap">
       <div>
         <span class="script">Feito na hora. Feito pra matar a fome.</span>
-        <h1>Lanche do<br><span>Gordão</span></h1>
+        <h1>Monstro<br><span>Burguer</span></h1>
         <p>Hambúrgueres caprichados, combo pra galera e refrigerante gelado. Monte seu pedido e envie direto pelo WhatsApp.</p>
         <div class="acoes">
           <a class="btn btn-amarelo" href="#cardapio">
@@ -404,7 +404,7 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
       <div>
         <span class="script">Sobre nós</span>
         <h2>Lanche feito<br>com capricho</h2>
-        <p>No Lanche do Gordão, cada hambúrguer é montado na hora, com ingredientes de qualidade e muito sabor. Lanche de verdade, pra quem chega com fome.</p>
+        <p>No Monstro Burguer, cada hambúrguer é montado na hora, com ingredientes de qualidade e muito sabor. Lanche de verdade, pra quem chega com fome.</p>
         <button class="btn btn-preto" data-abrir-carrinho>
           Fazer pedido
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -415,7 +415,8 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
         <circle cx="100" cy="100" r="96" fill="none" stroke="#111" stroke-width="2"/>
         <text><textPath href="#circulo" textLength="482" lengthAdjust="spacing">Lanche de verdade • Feito na hora •</textPath></text>
         <circle cx="100" cy="100" r="58" fill="#0b0b0b"/>
-        <image href="img/logo.webp" x="50" y="67" width="100" height="66"/>
+        <clipPath id="recorteLogo"><circle cx="100" cy="100" r="57"/></clipPath>
+        <image href="img/logo.webp" x="40" y="40" width="120" height="120" clip-path="url(#recorteLogo)"/>
       </svg>
     </div>
   </section>
@@ -434,7 +435,7 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
             <div>
               <h3>Endereço</h3>
-              <p>Av. Idelfonso Delegado Bianco<br>Cássia - MG, 37980-000</p>
+              <p>R. Antônio Marciano de Ávila, 1523 - Santa Mônica<br>Uberlândia - MG, 38408-244</p>
               <div class="acoes-info"><a class="btn btn-amarelo" id="linkRota" href="#" target="_blank" rel="noopener">Como chegar</a></div>
             </div>
           </div>
@@ -445,21 +446,10 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
               <p id="textoHorario">Das 18:30 às 23:30</p>
             </div>
           </div>
-          <div class="info revelar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-            <div>
-              <h3>Telefone e WhatsApp</h3>
-              <p class="tel-texto">(35) 99953-6900</p>
-              <div class="acoes-info">
-                <a class="btn btn-amarelo" id="linkWhatsLocal" href="#" target="_blank" rel="noopener">WhatsApp</a>
-                <a class="btn btn-contorno" id="linkTel" href="#">Ligar</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <div class="mapa revelar">
-        <iframe id="mapa" title="Mapa: Lanche do Gordão em Cássia - MG" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe id="mapa" title="Mapa: Monstro Burguer em Uberlândia - MG" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -469,12 +459,11 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
   <div class="wrap rodape-grade">
     <h4>Contato</h4>
     <ul>
-      <li>Av. Idelfonso Delegado Bianco, Cássia - MG, 37980-000</li>
+      <li>R. Antônio Marciano de Ávila, 1523 - Santa Mônica, Uberlândia - MG, 38408-244</li>
       <li id="rodapeHorario">Das 18:30 às 23:30</li>
-      <li><a id="linkWhats" href="#">WhatsApp</a></li>
     </ul>
   </div>
-  <div class="copy">© <span id="ano"></span> Lanche do Gordão. Todos os direitos reservados.</div>
+  <div class="copy">© <span id="ano"></span> Monstro Burguer. Todos os direitos reservados.</div>
 </footer>
 
 <button class="barra-car" id="barraCarrinho">
@@ -539,20 +528,20 @@ aside.carrinho.aberto{transform:none;visibility:visible;box-shadow:-10px 0 30px 
              "img": caminho da foto (ex.: "img/x.jpg").
              O primeiro combo aparece em destaque na seção "Combo".
    ===================================================================== */
-const WHATSAPP = "5535999536900";
+const WHATSAPP = "";
 
 /* Horário de funcionamento (24h). DIAS_FECHADOS: 0 = domingo ... 6 = sábado. Ex.: [1] fecha às segundas. */
 const ABRE = "18:30", FECHA = "23:30";
 const DIAS_FECHADOS = [];
 
 const COMBOS = [
-  { id:"c1", nome:"Combo Gordão", desc:"4 lanches com cheddar + porção de batata frita. Ideal pra dividir com a galera.", preco:55.00, img:"img/combo.jpg" }
+  { id:"c1", nome:"Combo Monstro", desc:"4 lanches com cheddar + porção de batata frita. Ideal pra dividir com a galera.", preco:55.00, img:"img/combo.jpg" }
 ];
 
 const LANCHES = [
-  { id:"l1", nome:"Gordão Bruto", desc:"Dois hambúrgueres, cheddar, bacon, picles, cebola roxa, tomate e alface.", preco:30.00, img:"img/gordao-bruto.jpg" },
-  { id:"l2", nome:"Gordão Grandão", desc:"Dois hambúrgueres smash, cheddar, bacon e maionese da casa.", preco:35.00, img:"img/gordao-grandao.jpg" },
-  { id:"l3", nome:"Gordão Grandão Super", desc:"Três hambúrgueres, cheddar, molho branco, bacon e cebola caramelizada.", preco:40.00, img:"img/gordao-grandao-super.jpg" }
+  { id:"l1", nome:"Monstro Burguer", desc:"Dois hambúrgueres, cheddar, bacon, picles, cebola roxa, tomate e alface.", preco:30.00, img:"img/gordao-bruto.jpg" },
+  { id:"l2", nome:"Monstro Máximo", desc:"Dois hambúrgueres smash, cheddar, bacon e maionese da casa.", preco:35.00, img:"img/gordao-grandao.jpg" },
+  { id:"l3", nome:"Super Monstro", desc:"Três hambúrgueres, cheddar, molho branco, bacon e cebola caramelizada.", preco:40.00, img:"img/gordao-grandao-super.jpg" }
 ];
 
 const BEBIDAS = [
@@ -606,13 +595,9 @@ $("trilhoLanches").innerHTML = LANCHES.map(p => cardHTML(p)).join("");
 $("trilhoBebidas").innerHTML = BEBIDAS.map(p => cardHTML(p, "bebida")).join("");
 
 $("ano").textContent = new Date().getFullYear();
-$("linkWhats").href = `https://wa.me/${WHATSAPP}`;
-$("linkWhats").textContent = "WhatsApp " + WHATSAPP.replace(/^55(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
 
 /* Onde estamos: links, mapa e "aberto agora" */
-const ENDERECO = "Av. Idelfonso Delegado Bianco, Cássia - MG, 37980-000";
-$("linkWhatsLocal").href = `https://wa.me/${WHATSAPP}`;
-$("linkTel").href = `tel:+${WHATSAPP}`;
+const ENDERECO = "R. Antônio Marciano de Ávila, 1523 - Santa Mônica, Uberlândia - MG, 38408-244";
 $("linkRota").href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ENDERECO)}`;
 $("mapa").src = `https://maps.google.com/maps?q=${encodeURIComponent(ENDERECO)}&z=16&output=embed`;
 const horarioTxt = `Das ${ABRE} às ${FECHA}`;
@@ -750,7 +735,7 @@ $("enviar").addEventListener("click", () => {
   if (tipo === "Entrega" && !endereco) { $("erro").textContent = "Informe o endereço de entrega."; $("endereco").focus(); return; }
 
   const { total } = totais();
-  const linhas = ["*Pedido — Lanche do Gordão*", ""];
+  const linhas = ["*Pedido — Monstro Burguer*", ""];
   for (const id in carrinho) {
     const p = TODOS[id], q = carrinho[id];
     linhas.push(`${q}x ${p.nome} — ${brl(p.preco * q)}`);
@@ -764,9 +749,6 @@ $("enviar").addEventListener("click", () => {
 
   const texto = encodeURIComponent(linhas.join("\n"));
   const numero = WHATSAPP.replace(/\D/g, "");
-  if (!numero) {
-    $("erro").textContent = "Número do WhatsApp ainda não configurado. Você poderá escolher o contato no WhatsApp.";
-  }
   const url = numero ? `https://wa.me/${numero}?text=${texto}` : `https://wa.me/?text=${texto}`;
   // No celular, abre o app do WhatsApp na mesma aba (pop-ups costumam ser bloqueados).
   // No computador, tenta uma nova aba e, se for bloqueada, abre na mesma.
@@ -780,7 +762,7 @@ $("enviar").addEventListener("click", () => {
 const semMovimento = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* Faixa: repete o texto para preencher a largura */
-$("faixaTexto").innerHTML = Array(12).fill("<span>Lanche do Gordão</span><span>Feito na hora</span><span>Peça pelo WhatsApp</span>").join("");
+$("faixaTexto").innerHTML = Array(12).fill("<span>Monstro Burguer</span><span>Feito na hora</span><span>Peça pelo WhatsApp</span>").join("");
 
 /* Gergelins espalhados no topo (posições aleatórias) */
 $("gergelim").innerHTML = Array.from({ length: innerWidth < 600 ? 14 : 22 }, () => {
